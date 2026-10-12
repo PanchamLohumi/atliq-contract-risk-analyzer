@@ -1,0 +1,100 @@
+{
+  "run_at": "2026-10-11T18:03:33",
+  "passed": 13,
+  "total": 13,
+  "blockers_failed": 0,
+  "launch_gate": "open",
+  "results": [
+    {
+      "id": "E-01",
+      "dimension": "collision_recall",
+      "blocker": true,
+      "passed": true,
+      "failures": []
+    },
+    {
+      "id": "E-02",
+      "dimension": "waiver_scope",
+      "blocker": true,
+      "passed": true,
+      "failures": []
+    },
+    {
+      "id": "E-03",
+      "dimension": "lapsed_shown_not_raised",
+      "blocker": false,
+      "passed": true,
+      "failures": []
+    },
+    {
+      "id": "E-04",
+      "dimension": "liveness_accuracy",
+      "blocker": true,
+      "passed": true,
+      "failures": []
+    },
+    {
+      "id": "E-05",
+      "dimension": "liveness_accuracy",
+      "blocker": true,
+      "passed": true,
+      "failures": []
+    },
+    {
+      "id": "E-06",
+      "dimension": "entity_and_law",
+      "blocker": false,
+      "passed": true,
+      "failures": []
+    },
+    {
+      "id": "E-07",
+      "dimension": "proportionality",
+      "blocker": false,
+      "passed": true,
+      "failures": []
+    },
+    {
+      "id": "E-08",
+      "dimension": "proportionality",
+      "blocker": false,
+      "passed": true,
+      "failures": []
+    },
+    {
+      "id": "E-09",
+      "dimension": "bundle_completeness",
+      "blocker": false,
+      "passed": true,
+      "failures": []
+    },
+    {
+      "id": "E-10",
+      "dimension": "false_positives_clean",
+      "blocker": false,
+      "passed": true,
+      "failures": []
+    },
+    {
+      "id": "E-11",
+      "dimension": "citation_integrity",
+      "blocker": true,
+      "passed": true,
+      "failures": []
+    },
+    {
+      "id": "E-12",
+      "dimension": "refusal",
+      "blocker": true,
+      "passed": true,
+      "failures": []
+    },
+    {
+      "id": "E-13",
+      "dimension": "entity_and_law",
+      "blocker": false,
+      "passed": true,
+      "failures": []
+    }
+  ]
+}

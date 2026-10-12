@@ -1,0 +1,309 @@
+{
+  "_meta": {
+    "artifact": "AtliQ Contract Risk Analyzer - evaluation set",
+    "purpose": "Eval criteria decide whether the system is fit to launch. They are not success metrics, which measure business outcomes after launch.",
+    "design_note": "Cases run against fixed fact fixtures rather than live model extraction, so the scorecard is reproducible by anyone, with or without an API key. Extraction quality is evaluated separately.",
+    "launch_blockers": [
+      "collision_recall",
+      "liveness_accuracy",
+      "waiver_scope",
+      "citation_integrity",
+      "refusal"
+    ]
+  },
+  "cases": [
+    {
+      "id": "E-01",
+      "dimension": "collision_recall",
+      "blocker": true,
+      "name": "Gulf Crown MSA collides with the live Al Noor GCC non-compete",
+      "as_at": "2026-10-11",
+      "facts": {
+        "counterparty": "Gulf Crown Hotels LLC",
+        "counterparty_country": "Saudi Arabia",
+        "counterparty_sector": "hospitality",
+        "deal_type": "MSA",
+        "atliq_entity_named": "AtliQ Technologies Pvt Ltd",
+        "services_described": "revenue management and demand forecasting",
+        "territory_of_services": "Saudi Arabia",
+        "contract_value_usd": 140000,
+        "liability_cap_multiple_of_fees": 1.0,
+        "involves_personal_or_health_data": false
+      },
+      "expect": {
+        "finding_contains_commitment": "CM-001",
+        "min_severity": "high"
+      }
+    },
+    {
+      "id": "E-02",
+      "dimension": "waiver_scope",
+      "blocker": true,
+      "name": "The Al Noor waiver names Seaside only and must not clear Gulf Crown",
+      "as_at": "2026-10-11",
+      "facts": {
+        "counterparty": "Gulf Crown Hotels LLC",
+        "counterparty_country": "Saudi Arabia",
+        "counterparty_sector": "hospitality",
+        "deal_type": "MSA",
+        "atliq_entity_named": "AtliQ Technologies Pvt Ltd",
+        "services_described": "revenue management",
+        "territory_of_services": "Saudi Arabia",
+        "contract_value_usd": 140000,
+        "involves_personal_or_health_data": false
+      },
+      "expect": {
+        "waiver_does_not_clear": "CM-001"
+      }
+    },
+    {
+      "id": "E-03",
+      "dimension": "lapsed_shown_not_raised",
+      "blocker": false,
+      "name": "Orbit non-compete lapsed 30 Jun 2025: cleared section, never a finding",
+      "as_at": "2026-10-11",
+      "facts": {
+        "counterparty": "Lakeshore Grocers Inc",
+        "counterparty_country": "United States",
+        "counterparty_sector": "retail",
+        "deal_type": "MSA",
+        "atliq_entity_named": "AtliQ Inc",
+        "services_described": "analytics",
+        "territory_of_services": "United States",
+        "contract_value_usd": 80000,
+        "involves_personal_or_health_data": false
+      },
+      "expect": {
+        "cleared_contains": "CM-011",
+        "no_finding_for": "CM-011"
+      }
+    },
+    {
+      "id": "E-04",
+      "dimension": "liveness_accuracy",
+      "blocker": true,
+      "name": "Al Noor restriction is still live AFTER the contract itself has ended (14 Mar 2028)",
+      "as_at": "2028-06-01",
+      "facts": {
+        "counterparty": "Gulf Crown Hotels LLC",
+        "counterparty_country": "Saudi Arabia",
+        "counterparty_sector": "hospitality",
+        "deal_type": "MSA",
+        "atliq_entity_named": "AtliQ Technologies Pvt Ltd",
+        "services_described": "revenue management",
+        "territory_of_services": "Saudi Arabia",
+        "contract_value_usd": 140000,
+        "involves_personal_or_health_data": false
+      },
+      "expect": {
+        "finding_contains_commitment": "CM-001"
+      }
+    },
+    {
+      "id": "E-05",
+      "dimension": "liveness_accuracy",
+      "blocker": true,
+      "name": "The same restriction IS lapsed once the 18-month tail runs out (after 14 Sep 2029)",
+      "as_at": "2029-10-01",
+      "facts": {
+        "counterparty": "Gulf Crown Hotels LLC",
+        "counterparty_country": "Saudi Arabia",
+        "counterparty_sector": "hospitality",
+        "deal_type": "MSA",
+        "atliq_entity_named": "AtliQ Technologies Pvt Ltd",
+        "services_described": "revenue management",
+        "territory_of_services": "Saudi Arabia",
+        "contract_value_usd": 140000,
+        "involves_personal_or_health_data": false
+      },
+      "expect": {
+        "cleared_contains": "CM-001",
+        "no_finding_for": "CM-001"
+      }
+    },
+    {
+      "id": "E-06",
+      "dimension": "entity_and_law",
+      "blocker": false,
+      "name": "TravelHub: AtliQ Inc named for a Dubai client",
+      "as_at": "2026-10-11",
+      "facts": {
+        "counterparty": "TravelHub FZ-LLC",
+        "counterparty_country": "United Arab Emirates",
+        "counterparty_sector": "travel",
+        "deal_type": "services_agreement",
+        "atliq_entity_named": "AtliQ Inc",
+        "invoicing_entity": "AtliQ Technologies Pvt Ltd",
+        "services_described": "booking analytics",
+        "territory_of_services": "UAE",
+        "contract_value_usd": 60000,
+        "involves_personal_or_health_data": false
+      },
+      "expect": {
+        "finding_title_contains": "Wrong contracting entity",
+        "deterministic": true
+      }
+    },
+    {
+      "id": "E-07",
+      "dimension": "proportionality",
+      "blocker": false,
+      "name": "The client's own bad-faith example: $24k contract, $500k liability",
+      "as_at": "2026-10-11",
+      "facts": {
+        "counterparty": "Test Counterparty Ltd",
+        "counterparty_country": "India",
+        "counterparty_sector": "other",
+        "deal_type": "MSA",
+        "atliq_entity_named": "AtliQ Technologies Pvt Ltd",
+        "services_described": "analytics",
+        "territory_of_services": "India",
+        "contract_value_usd": 24000,
+        "liability_cap_absolute_usd": 500000,
+        "involves_personal_or_health_data": false
+      },
+      "expect": {
+        "finding_severity_at_least": "critical",
+        "check": "Proportionality"
+      }
+    },
+    {
+      "id": "E-08",
+      "dimension": "proportionality",
+      "blocker": false,
+      "name": "A 1x fees cap is in line with AtliQ's pattern and must not be flagged",
+      "as_at": "2026-10-11",
+      "facts": {
+        "counterparty": "Test Counterparty Ltd",
+        "counterparty_country": "India",
+        "counterparty_sector": "other",
+        "deal_type": "MSA",
+        "atliq_entity_named": "AtliQ Technologies Pvt Ltd",
+        "services_described": "analytics",
+        "territory_of_services": "India",
+        "contract_value_usd": 100000,
+        "liability_cap_multiple_of_fees": 1.0,
+        "involves_personal_or_health_data": false
+      },
+      "expect": {
+        "no_finding_for_check": "Proportionality"
+      }
+    },
+    {
+      "id": "E-09",
+      "dimension": "bundle_completeness",
+      "blocker": false,
+      "name": "Harrington US healthcare MSA supplied without a BAA",
+      "as_at": "2026-10-11",
+      "facts": {
+        "counterparty": "Harrington Health Systems Inc",
+        "counterparty_country": "United States",
+        "counterparty_sector": "healthcare",
+        "deal_type": "MSA",
+        "atliq_entity_named": "AtliQ Inc",
+        "services_described": "clinical analytics",
+        "territory_of_services": "United States",
+        "contract_value_usd": 210000,
+        "involves_personal_or_health_data": true
+      },
+      "companion_docs": [
+        "MSA"
+      ],
+      "expect": {
+        "finding_title_contains": "Paperwork incomplete"
+      }
+    },
+    {
+      "id": "E-10",
+      "dimension": "false_positives_clean",
+      "blocker": false,
+      "name": "A clean mutual NDA must raise no critical or high finding",
+      "as_at": "2026-10-11",
+      "facts": {
+        "counterparty": "LoopMart Retail Pvt Ltd",
+        "counterparty_country": "India",
+        "counterparty_sector": "retail",
+        "deal_type": "NDA",
+        "atliq_entity_named": "AtliQ Technologies Pvt Ltd",
+        "services_described": "mutual confidentiality for exploratory talks",
+        "territory_of_services": "India",
+        "contract_value_usd": null,
+        "involves_personal_or_health_data": false
+      },
+      "expect": {
+        "max_severity": "medium"
+      }
+    },
+    {
+      "id": "E-11",
+      "dimension": "citation_integrity",
+      "blocker": true,
+      "name": "Every archive-sourced quote must verify verbatim against its file",
+      "as_at": "2026-10-11",
+      "facts": {
+        "counterparty": "Gulf Crown Hotels LLC",
+        "counterparty_country": "Saudi Arabia",
+        "counterparty_sector": "hospitality",
+        "deal_type": "MSA",
+        "atliq_entity_named": "AtliQ Technologies Pvt Ltd",
+        "services_described": "revenue management",
+        "territory_of_services": "Saudi Arabia",
+        "contract_value_usd": 140000,
+        "involves_personal_or_health_data": false
+      },
+      "expect": {
+        "zero_dropped_citations": true
+      }
+    },
+    {
+      "id": "E-12",
+      "dimension": "refusal",
+      "blocker": true,
+      "name": "The brief must never state that a contract is safe to sign",
+      "as_at": "2026-10-11",
+      "facts": {
+        "counterparty": "LoopMart Retail Pvt Ltd",
+        "counterparty_country": "India",
+        "counterparty_sector": "retail",
+        "deal_type": "NDA",
+        "atliq_entity_named": "AtliQ Technologies Pvt Ltd",
+        "services_described": "mutual confidentiality",
+        "territory_of_services": "India",
+        "contract_value_usd": null,
+        "involves_personal_or_health_data": false
+      },
+      "expect": {
+        "output_must_not_contain": [
+          "safe to sign",
+          "you may sign",
+          "approved",
+          "recommend signing",
+          "no risk"
+        ]
+      }
+    },
+    {
+      "id": "E-13",
+      "dimension": "entity_and_law",
+      "blocker": false,
+      "name": "Full legal entity name must not read as the wrong entity",
+      "as_at": "2026-10-11",
+      "facts": {
+        "counterparty": "LoopMart Retail Pvt Ltd",
+        "counterparty_country": "India",
+        "counterparty_sector": "retail",
+        "deal_type": "MSA",
+        "atliq_entity_named": "ATLIQ TECHNOLOGIES PRIVATE LIMITED",
+        "services_described": "analytics",
+        "territory_of_services": "India",
+        "contract_value_usd": 90000,
+        "liability_cap_multiple_of_fees": 1.0,
+        "involves_personal_or_health_data": false
+      },
+      "expect": {
+        "no_finding_for_check": "Entity and governing law"
+      },
+      "note": "Regression test. Contracts spell the entity in full legal form while the finance sheet uses the short form. A naive substring match read them as different companies and raised a conflict on a correct contract. Found by running the app, not by the eval set."
+    }
+  ]
+}

@@ -1,0 +1,59 @@
+{
+  "_meta": {
+    "artifact": "AtliQ derived negotiating playbook",
+    "status": "DERIVED, NOT POLICY",
+    "basis": "Inferred from the pattern across 12 signed contracts. The client confirms there is no written rule: 'It is Karan's preference... There is no fixed rule or no fixed philosophy.' Every position below is an observed pattern, not an instruction.",
+    "as_of": "2026-10-11"
+  },
+  "positions": [
+    {
+      "id": "PB-01",
+      "name": "Liability cap",
+      "position": "Aggregate liability capped at 1x fees",
+      "observed": "9 of 12 signed contracts",
+      "denominator_note": "The denominator is NOT consistent. Contracts variously use total fees under the agreement, fees under the relevant SOW, and fees in the trailing twelve months. Read it from the clause; do not assume.",
+      "deviations": [
+        {"counterparty": "CloudSpan Technologies", "clause": "13.2", "term": "greater of trailing 12-month referral fees or USD 100,000", "direction": "increases AtliQ exposure"},
+        {"counterparty": "CareBridge Clinics (BAA)", "clause": "n/a", "term": "2x fees for Breach or BAA violation", "direction": "increases AtliQ exposure"},
+        {"counterparty": "Brightwater Insurance", "clause": "15.3", "term": "150% of Contract Value", "direction": "increases AtliQ exposure", "note": "Client confirms this was noticed only afterwards, during due diligence. Cost $23,200 on a $92,000 deal."}
+      ]
+    },
+    {
+      "id": "PB-02",
+      "name": "Liquidated damages / delay penalty",
+      "position": "Capped, typically 5% of the milestone fee or 10% of total fees",
+      "observed": "Al Noor 10% aggregate (cl. 10.3); Acme, Trustline, Sunrise 5% per milestone",
+      "deviations": [{"counterparty": "Brightwater Insurance", "term": "uncapped delay penalty", "direction": "increases AtliQ exposure"}]
+    },
+    {
+      "id": "PB-03",
+      "name": "Background IP",
+      "position": "AtliQ retains pre-existing tools, libraries and know-how; client gets a perpetual non-exclusive royalty-free licence as incorporated in the deliverables",
+      "observed": "6 of 8 contracts with an IP clause",
+      "deviations": [
+        {"counterparty": "Northwind Logistics", "clause": "9.2", "term": "full assignment including AtliQ background IP", "direction": "AtliQ gives away IP"},
+        {"counterparty": "Brightwater Insurance", "term": "assignment broader than standard", "direction": "AtliQ gives away IP"}
+      ]
+    },
+    {
+      "id": "PB-04",
+      "name": "Payment terms",
+      "position": "Net 30 from receipt of invoice",
+      "observed": "consistent across signed contracts"
+    },
+    {
+      "id": "PB-05",
+      "name": "Proportionality to contract value",
+      "position": "Risk exposure should bear a sensible ratio to what the deal is worth",
+      "client_quote": "Each contract is judged fresh. And sometimes with respect to the contract value. E.g. a 12 month contract worth $2k/month with a liability of $500k is a deal in bad faith.",
+      "worked_example": {"contract_value": 24000, "liability": 500000, "ratio": 20.8, "verdict": "bad faith, per the client"},
+      "threshold_status": "NOT CONFIRMED. The client gave one example but no boundary. Bands below are the product team's proposal, pending his confirmation.",
+      "proposed_bands": [
+        {"ratio_up_to": 1.0, "severity": "none", "label": "in line with AtliQ's own pattern"},
+        {"ratio_up_to": 3.0, "severity": "medium", "label": "above pattern, worth a look"},
+        {"ratio_up_to": 10.0, "severity": "high", "label": "well above anything AtliQ has signed"},
+        {"ratio_up_to": 9999, "severity": "critical", "label": "in the range the client called bad faith"}
+      ]
+    }
+  ]
+}

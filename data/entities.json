@@ -1,0 +1,16 @@
+{
+  "source": "atliq_entities.md, maintained by finance, last updated January 2026",
+  "entities": [
+    {"name": "AtliQ Technologies Pvt Ltd", "jurisdiction": "India", "serves": "India, Middle East, Europe, and any region outside the United States",
+     "serves_regions": ["india","middle east","europe","uae","saudi arabia","qatar","kuwait","bahrain","oman","germany","france","uk","netherlands","asia"],
+     "signatory": "Karandeep (CEO)", "currencies": ["INR","USD","EUR"]},
+    {"name": "AtliQ Inc", "jurisdiction": "United States (Delaware)", "serves": "Clients in the United States only",
+     "serves_regions": ["united states","usa","us"], "signatory": "Karandeep (President)", "currencies": ["USD"]}
+  ],
+  "rule": "The entity named in a client contract determines which entity invoices, which tax regime applies, and which bank account receives payment. A mismatch between the contracting entity and the invoicing entity has caused payment delays twice in 2025.",
+  "bundle_requirements": {
+    "us_healthcare": ["Mutual NDA", "Business Associate Agreement (BAA)", "Master Services Agreement or Services Agreement"],
+    "eu_personal_data": ["Data Processing Agreement (DPA) or Annex", "Services Agreement"],
+    "subcontractor_regulated_data": ["Subcontractor agreement with BAA/DPA flow-down"]
+  }
+}
