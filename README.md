@@ -14,7 +14,7 @@ says a contract is safe to sign.
 | # | Deliverable | Where it is |
 |---|---|---|
 | 1 | Problem Discovery & User Research | [`deliverables/…_Problem_Discovery.xlsx`](deliverables/Capstone2_AI_PM_PanchamLohumi_CRA_Problem_Discovery.xlsx) |
-| 2 | AI Opportunity Map | [Miro board](https://miro.com/app/board/uXjVEeHZ57w=/) — process map, dot vote, and the AI redesign of the voted step |
+| 2 | AI Opportunity Map | [**Miro board — opens on the process map**](https://miro.com/app/board/uXjVEeHZ57w=/?moveToWidget=3458764686109174167) · also exported to [`deliverables/…_Opportunity_Map.pdf`](deliverables/Capstone2_AI_PM_PanchamLohumi_CRA_Opportunity_Map.pdf)<br><sub>Two frames: the current-state process map with the dot vote, and the AI redesign of the voted step. The board also carries the Session 11 teaching exercise it was duplicated from — the link above skips to the capstone work.</sub> |
 | 3 | AI PRD | [`deliverables/…_PRD.docx`](deliverables/Capstone2_AI_PM_PanchamLohumi_CRA_PRD.docx) |
 | 4 | Cost Estimation | [`deliverables/…_Cost_Estimation.xlsx`](deliverables/Capstone2_AI_PM_PanchamLohumi_CRA_Cost_Estimation.xlsx) |
 | 5 | Working prototype | This repository. Live app: **https://atliq-contract-risk-analyzer-panchamlohumi.streamlit.app/** · run locally with the steps below |
