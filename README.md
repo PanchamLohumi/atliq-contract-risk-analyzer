@@ -19,7 +19,7 @@ says a contract is safe to sign.
 | 4 | Cost Estimation | [`deliverables/…_Cost_Estimation.xlsx`](deliverables/Capstone2_AI_PM_PanchamLohumi_CRA_Cost_Estimation.xlsx) |
 | 5 | Working prototype | This repository. Live app: **https://atliq-contract-risk-analyzer-panchamlohumi.streamlit.app/** · run locally with the steps below |
 | 6 | Presentation | [`deliverables/…_Presentation.pdf`](deliverables/Capstone2_AI_PM_PanchamLohumi_CRA_Presentation.pdf) |
-| 7 | Stakeholder demo video | **[VIDEO URL]** (~5 min) |
+| 7 | Stakeholder demo video | [`deliverables/…_Demo_Video.mp4`](deliverables/Capstone2_AI_PM_PanchamLohumi_CRA_Demo_Video.mp4) — 8 min 15 s, plays in the browser. **Chapter list below.** |
 
 **Supporting material, not required but submitted:**
 
@@ -27,6 +27,27 @@ says a contract is safe to sign.
 |---|---|
 | Test strategy & coverage matrix | [`deliverables/…_Test_Strategy.docx`](deliverables/Capstone2_AI_PM_PanchamLohumi_CRA_Test_Strategy.docx) — all 15 contracts, expected behaviour, negative tests, disclosed limitations |
 | Decision log | [`deliverables/…_Decision_Log.md`](deliverables/Capstone2_AI_PM_PanchamLohumi_CRA_Decision_Log.md) — every product decision, what evidence drove it, and the open questions |
+
+
+### Demo video — what happens when
+
+The video is in this repository rather than on a video host, so it stays with the
+submission. GitHub plays it in the browser; the download button is on the same page.
+
+| | |
+|---|---|
+| **0:00** | The problem. One rushed signature, $23,200, on a $92,000 deal — and the four numbers behind it. |
+| **0:35** | What reading the whole archive turned up: a restriction can outlive the contract that created it, and a waiver granted once covers one deal only. |
+| **1:00** | The tool, and the quiet case — the LoopMart NDA. It does **not** return a clean bill: a data restriction it cannot rule out comes back as *your call*, and a check it skipped is reported as *not applicable* rather than passed. |
+| **2:25** | The loud case — the Gulf Crown MSA, $140,000, clean paper. **Conflict:** the Al Noor GCC non-compete, still binding 1,068 days after that contract's own expiry, quoted verbatim and verified against source. |
+| **3:15** | The waiver that looks like a clearance and isn't. It covers Seaside Hotels in Oman and nothing else. |
+| **3:40** | Roll the clock to October 2029. The Al Noor restriction moves into *Considered and cleared* with its expiry date — shown, not hidden — and the header still reads conflict, because a different commitment has no recorded end date and the system will not assume one. |
+| **4:55** | Harrington Health. Before any analysis runs, the system works out that a US healthcare deal needs a signed Business Associate Agreement. It is not told; it derives it. |
+| **5:30** | The NDA is signed — green. The BAA exists — and nobody signed it. Six blank signature fields, flagged amber. On paper the deal looks complete; under HIPAA it is worth nothing. |
+| **6:30** | The build decision I would defend hardest: three of the five checks use no model at all. |
+| **7:00** | Evals — 13 of 13 passing, six of them launch blockers — and the false positive that survived a green suite. |
+| **7:25** | Cost. Sixty cents a month separates the cheapest model from the most expensive, so accuracy gates the launch and budget does not. |
+| **7:55** | Close. |
 
 ---
 
