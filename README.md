@@ -19,7 +19,7 @@ says a contract is safe to sign.
 | 4 | Cost Estimation | [`deliverables/…_Cost_Estimation.xlsx`](deliverables/Capstone2_AI_PM_PanchamLohumi_CRA_Cost_Estimation.xlsx) |
 | 5 | Working prototype | This repository. Live app: **https://atliq-contract-risk-analyzer-panchamlohumi.streamlit.app/** · run locally with the steps below |
 | 6 | Presentation | [`deliverables/…_Presentation.pdf`](deliverables/Capstone2_AI_PM_PanchamLohumi_CRA_Presentation.pdf) |
-| 7 | Stakeholder demo video | [`deliverables/…_Demo_Video.mp4`](deliverables/Capstone2_AI_PM_PanchamLohumi_CRA_Demo_Video.mp4) — 8 min 15 s, 10.4 MB. GitHub will not preview a file this size: open it and click **Download**. **Chapter list below.** |
+| 7 | Stakeholder demo video | **[Watch it — 8 min 15 s](https://drive.google.com/file/d/1UMho1EDccecO0lXgYjrwUiyx3jbXXmFL/view?usp=sharing)** (streams in the browser, no download) · the same file is in this repo at [`deliverables/…_Demo_Video.mp4`](deliverables/Capstone2_AI_PM_PanchamLohumi_CRA_Demo_Video.mp4). **Chapter list below.** |
 
 **Supporting material, not required but submitted:**
 
@@ -31,10 +31,13 @@ says a contract is safe to sign.
 
 ### Demo video — what happens when
 
-The video is in this repository rather than on a video host, so it travels with the
-submission and cannot rot. GitHub will not preview a file this size, so open the file
-and click **Download** (10.4 MB, plays in any player). The chapter list is there so a
-reviewer can jump to a section instead of watching it end to end.
+**[Watch it here.](https://drive.google.com/file/d/1UMho1EDccecO0lXgYjrwUiyx3jbXXmFL/view?usp=sharing)** The same file is committed to this repository as well,
+at `deliverables/Capstone2_AI_PM_PanchamLohumi_CRA_Demo_Video.mp4`, so the video travels
+with the submission and does not depend on a link staying alive — though GitHub will not
+preview a 10.4 MB file in the browser, so that copy downloads rather than streams.
+
+The chapter list is there so a reviewer can jump to a section instead of watching it
+end to end.
 
 | | |
 |---|---|
